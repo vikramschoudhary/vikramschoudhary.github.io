@@ -28,11 +28,7 @@ text-align:center;
 animation:fadeDown 1s ease;
 }
 
-header h1{
-margin:0;
-}
-
-/* NAVBAR */
+/* NAVIGATION */
 
 nav{
 background:#0f172a;
@@ -67,13 +63,13 @@ nav a:hover{
 background:#334155;
 }
 
-/* animated underline */
+/* underline animation */
 
 nav a::after{
 content:"";
 position:absolute;
 left:20%;
-bottom:5px;
+bottom:6px;
 width:0%;
 height:2px;
 background:#38bdf8;
@@ -110,14 +106,52 @@ opacity:1;
 transform:translateY(0);
 }
 
-section:hover{
-transform:scale(1.01);
-}
-
 h2{
 color:#1e3a5f;
 border-bottom:2px solid #eee;
 padding-bottom:6px;
+}
+
+/* FEEDBACK FORM */
+
+.feedback-form{
+display:flex;
+flex-direction:column;
+gap:12px;
+margin-top:15px;
+}
+
+.feedback-form input,
+.feedback-form textarea{
+padding:10px;
+font-size:16px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+.feedback-form textarea{
+min-height:120px;
+resize:vertical;
+}
+
+.feedback-form button{
+background:#1e3a5f;
+color:white;
+border:none;
+padding:12px;
+font-size:16px;
+border-radius:5px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.feedback-form button:hover{
+background:#334155;
+}
+
+#msg{
+margin-top:10px;
+color:green;
 }
 
 /* FOOTER */
@@ -137,7 +171,7 @@ flex:1;
 }
 }
 
-/* ANIMATIONS */
+/* HEADER ANIMATION */
 
 @keyframes fadeDown{
 from{
@@ -169,6 +203,7 @@ transform:translateY(0);
 <li><a href="#family">Family</a></li>
 <li><a href="#friends">Friends</a></li>
 <li><a href="#nation">Nation</a></li>
+<li><a href="#feedback">Feedback</a></li>
 </ul>
 </nav>
 
@@ -179,7 +214,12 @@ transform:translateY(0);
 <p>
 I am a Scientist working with the Government of India in the field of
 e-Governance and digital public infrastructure. My work focuses on building
-large scale ICT platforms that enable citizens to access public services efficiently.
+large scale ICT platforms that enable citizens to access public services
+efficiently.
+</p>
+<p>
+I have contributed to multiple national level projects in healthcare,
+civil aviation and governance systems.
 </p>
 </section>
 
@@ -196,53 +236,109 @@ including OPD registration, admission, billing, laboratory, radiology and
 electronic health records.
 </p>
 
+<p>
+The platform integrates with India's digital health ecosystem and supports
+modern scalable healthcare service delivery.
+</p>
+
 </section>
 
 <section id="past">
+
 <h2>Past Work</h2>
 
 <h3>CGHS Project</h3>
-<p>Digital healthcare initiatives for Central Government Health Scheme.</p>
+<p>
+Digital initiatives supporting the Central Government Health Scheme
+which provides healthcare services to central government employees
+and pensioners.
+</p>
 
 <h3>Lifeline UDAN Portal</h3>
-<p>COVID-19 logistics portal coordinating medical cargo flights across India.</p>
+<p>
+Portal developed during the COVID-19 pandemic to coordinate transport
+of essential medical supplies through India's UDAN aviation network.
+</p>
 
 <h3>eSahaj Project – Ministry of Civil Aviation</h3>
-<p>Online portal for aviation security clearance processing.</p>
+<p>
+Online portal enabling submission and processing of aviation security
+clearance applications across multiple government agencies.
+</p>
 
 <h3>PQSoft – Parliamentary Questions System</h3>
-<p>Software for managing parliamentary questions in government departments.</p>
+<p>
+Software system used in government departments to manage and respond
+to parliamentary questions raised in Lok Sabha and Rajya Sabha.
+</p>
 
 </section>
 
 <section id="future">
+
 <h2>Future Plans</h2>
 
 <ul>
 <li>Promote open digital governance platforms</li>
-<li>Build scalable public digital infrastructure</li>
-<li>Encourage open source adoption in government</li>
-<li>Advance healthcare digitization</li>
+<li>Develop scalable public digital infrastructure</li>
+<li>Encourage open source technologies in government</li>
+<li>Contribute to healthcare digitization initiatives</li>
 </ul>
 
 </section>
 
 <section id="family">
+
 <h2>Family</h2>
-<p>My family is a constant source of strength and inspiration.</p>
+
+<p>
+My family has always been a source of strength and inspiration
+throughout my journey.
+</p>
+
 </section>
 
 <section id="friends">
+
 <h2>Friends</h2>
-<p>Friends and colleagues play a vital role in collaboration and innovation.</p>
+
+<p>
+Friends and colleagues play an important role in collaboration
+and innovation.
+</p>
+
 </section>
 
 <section id="nation">
+
 <h2>Nation</h2>
+
 <p>
-Technology can empower citizens and transform governance in India.
-Digital public infrastructure has enormous potential for nation building.
+I believe technology has immense potential to strengthen governance
+and empower citizens. Digital public infrastructure can transform
+service delivery for millions of people.
 </p>
+
+</section>
+
+<section id="feedback">
+
+<h2>Send Feedback</h2>
+
+<form id="feedbackForm" class="feedback-form">
+
+<input type="text" id="name" placeholder="Your Name" required>
+
+<input type="email" id="email" placeholder="Your Email" required>
+
+<textarea id="feedbackText" placeholder="Your Feedback"></textarea>
+
+<button type="submit">Submit</button>
+
+</form>
+
+<p id="msg"></p>
+
 </section>
 
 </div>
@@ -253,7 +349,7 @@ Digital public infrastructure has enormous potential for nation building.
 
 <script>
 
-/* Scroll animation */
+/* Section animation */
 
 const sections = document.querySelectorAll("section");
 
@@ -267,6 +363,30 @@ entry.target.classList.add("show");
 
 sections.forEach(section=>{
 observer.observe(section);
+});
+
+/* Feedback form */
+
+document.getElementById("feedbackForm").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+fetch("https://script.google.com/macros/s/AKfycbyfvgoqgrE4FITnKsW7CmhrTOfOLiyZY1tN_IsxJ6Vx2hUQiOm734YEZthV033dpadV4g/exec", {
+
+method: "POST",
+
+body: JSON.stringify({
+name: document.getElementById("name").value,
+email: document.getElementById("email").value,
+feedback: document.getElementById("feedbackText").value
+})
+
+})
+.then(res => res.json())
+.then(data => {
+document.getElementById("msg").innerHTML="Feedback submitted successfully";
+});
+
 });
 
 </script>
