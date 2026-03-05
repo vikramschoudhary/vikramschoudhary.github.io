@@ -7,6 +7,10 @@
 
 <style>
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 font-family: Arial, Helvetica, sans-serif;
 margin:0;
@@ -14,15 +18,27 @@ background:#f5f5f5;
 line-height:1.6;
 }
 
+/* HEADER */
+
 header{
 background:#1e3a5f;
 color:white;
-padding:20px;
+padding:40px 20px;
 text-align:center;
+animation:fadeDown 1s ease;
 }
+
+header h1{
+margin:0;
+}
+
+/* NAVBAR */
 
 nav{
 background:#0f172a;
+position:sticky;
+top:0;
+z-index:100;
 }
 
 nav ul{
@@ -39,26 +55,63 @@ flex:1 1 50%;
 
 nav a{
 display:block;
-padding:12px;
+padding:14px;
 color:white;
 text-decoration:none;
 text-align:center;
-border:1px solid #1e293b;
+position:relative;
+transition:background 0.3s;
 }
 
 nav a:hover{
 background:#334155;
 }
 
+/* animated underline */
+
+nav a::after{
+content:"";
+position:absolute;
+left:20%;
+bottom:5px;
+width:0%;
+height:2px;
+background:#38bdf8;
+transition:0.3s;
+}
+
+nav a:hover::after{
+width:60%;
+}
+
+/* CONTAINER */
+
 .container{
 padding:20px;
 max-width:900px;
 margin:auto;
-background:white;
 }
 
+/* SECTIONS */
+
 section{
-margin-bottom:40px;
+background:white;
+padding:20px;
+margin-bottom:25px;
+border-radius:8px;
+box-shadow:0 2px 8px rgba(0,0,0,0.08);
+opacity:0;
+transform:translateY(40px);
+transition:all 0.8s ease;
+}
+
+section.show{
+opacity:1;
+transform:translateY(0);
+}
+
+section:hover{
+transform:scale(1.01);
 }
 
 h2{
@@ -67,6 +120,8 @@ border-bottom:2px solid #eee;
 padding-bottom:6px;
 }
 
+/* FOOTER */
+
 footer{
 text-align:center;
 padding:15px;
@@ -74,9 +129,24 @@ background:#1e3a5f;
 color:white;
 }
 
+/* DESKTOP NAV */
+
 @media(min-width:768px){
 nav li{
 flex:1;
+}
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeDown{
+from{
+opacity:0;
+transform:translateY(-30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
 }
 }
 
@@ -109,13 +179,7 @@ flex:1;
 <p>
 I am a Scientist working with the Government of India in the field of
 e-Governance and digital public infrastructure. My work focuses on building
-large scale ICT platforms that enable citizens to access public services
-efficiently.
-</p>
-
-<p>
-I have contributed to multiple national level projects in healthcare,
-civil aviation and governance systems.
+large scale ICT platforms that enable citizens to access public services efficiently.
 </p>
 </section>
 
@@ -132,97 +196,53 @@ including OPD registration, admission, billing, laboratory, radiology and
 electronic health records.
 </p>
 
-<p>
-The platform is built on modern microservice architecture and is integrated
-with the <b>Ayushman Bharat Digital Mission ecosystem</b> to enable nationwide
-digital healthcare services.
-</p>
-
 </section>
 
 <section id="past">
-
 <h2>Past Work</h2>
 
 <h3>CGHS Project</h3>
-<p>
-Contributed to digital initiatives for the Central Government Health Scheme
-(CGHs) which provides healthcare services to central government employees
-and pensioners across India.
-</p>
+<p>Digital healthcare initiatives for Central Government Health Scheme.</p>
 
 <h3>Lifeline UDAN Portal</h3>
-<p>
-The Lifeline UDAN portal was developed during the COVID-19 pandemic to
-coordinate transportation of essential medical supplies through India’s
-UDAN regional aviation network.
-</p>
+<p>COVID-19 logistics portal coordinating medical cargo flights across India.</p>
 
 <h3>eSahaj Project – Ministry of Civil Aviation</h3>
-
-<p>
-The eSahaj portal enables online submission and processing of security
-clearance applications required for aviation related services. The system
-streamlines approvals among multiple government agencies and ministries.
-</p>
+<p>Online portal for aviation security clearance processing.</p>
 
 <h3>PQSoft – Parliamentary Questions System</h3>
-
-<p>
-PQSoft is an internal government software used for managing parliamentary
-questions raised in Lok Sabha and Rajya Sabha. It helps departments track,
-prepare and respond to parliamentary queries efficiently.
-</p>
+<p>Software for managing parliamentary questions in government departments.</p>
 
 </section>
 
 <section id="future">
-
 <h2>Future Plans</h2>
 
 <ul>
-<li>Promote open digital governance platforms.</li>
-<li>Work on scalable public digital infrastructure.</li>
-<li>Encourage open source technologies in government.</li>
-<li>Contribute to healthcare digitization initiatives.</li>
+<li>Promote open digital governance platforms</li>
+<li>Build scalable public digital infrastructure</li>
+<li>Encourage open source adoption in government</li>
+<li>Advance healthcare digitization</li>
 </ul>
 
 </section>
 
 <section id="family">
-
 <h2>Family</h2>
-
-<p>
-My family has always been a source of strength and inspiration in my journey.
-Their support enables me to pursue meaningful work in public service and
-technology.
-</p>
-
+<p>My family is a constant source of strength and inspiration.</p>
 </section>
 
 <section id="friends">
-
 <h2>Friends</h2>
-
-<p>
-Friends and colleagues form an important part of my life. Collaboration,
-discussion and teamwork are key elements that help in building successful
-technology systems.
-</p>
-
+<p>Friends and colleagues play a vital role in collaboration and innovation.</p>
 </section>
 
 <section id="nation">
-
 <h2>Nation</h2>
-
 <p>
-I strongly believe in contributing to nation building through technology.
-Digital governance platforms developed in India have the potential to
-transform service delivery for millions of citizens.
+Technology can empower citizens and transform governance in India.
+Digital public infrastructure has enormous potential for nation building.
 </p>
-
 </section>
 
 </div>
@@ -230,6 +250,26 @@ transform service delivery for millions of citizens.
 <footer>
 © 2026 Vikram Chaudhary
 </footer>
+
+<script>
+
+/* Scroll animation */
+
+const sections = document.querySelectorAll("section");
+
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+
+sections.forEach(section=>{
+observer.observe(section);
+});
+
+</script>
 
 </body>
 </html>
