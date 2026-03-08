@@ -19,25 +19,17 @@ function log(msg){
 
 function startTest(){
 
-let count=0;
-
-let timer=setInterval(()=>{
+setInterval(()=>{
 
 fetch("/")
 .then(r=>{
-count++;
-log("Request "+count+" success");
+log("Request success at " + new Date().toLocaleTimeString());
 })
 .catch(e=>{
 log("Error: "+e);
 });
 
-if(count>=10){
-clearInterval(timer);
-log("Finished");
-}
-
-},2000);
+},2000);   // every 2 seconds
 
 }
 
