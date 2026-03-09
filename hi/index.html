@@ -1,1 +1,541 @@
 
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+<link rel="icon" type="image/png" href="logo-favicon.png">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="logo-favicon" type="image/x-icon">
+
+<title>ड्रोन कृषि छिड़काव सेवा | पश्चिमी राजस्थान</title>
+
+<style>
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family: Arial, Helvetica, sans-serif;
+margin:0;
+background:#f5f5f5;
+line-height:1.6;
+}
+
+/* HEADER */
+header{
+background:#0f5132;
+color:white;
+padding:20px;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+animation:fadeDown 1s ease;
+}
+
+.header-logo{
+position:absolute;
+left:20px;
+top:0;
+bottom:0;
+display:flex;
+align-items:center;
+}
+
+.header-logo img{
+height:100%;
+max-height:150px;
+}
+
+/* NAV */
+
+nav{
+background:#052e16;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+nav ul{
+display:flex;
+flex-wrap:wrap;
+list-style:none;
+margin:0;
+padding:0;
+}
+
+nav li{
+flex:1 1 50%;
+}
+
+nav a{
+display:block;
+padding:14px;
+color:white;
+text-decoration:none;
+text-align:center;
+transition:0.3s;
+}
+
+nav a:hover{
+background:#14532d;
+}
+
+/* CONTAINER */
+
+.container{
+padding:20px;
+max-width:1000px;
+margin:auto;
+}
+
+/* SECTIONS */
+
+section{
+background:white;
+padding:20px;
+margin-bottom:25px;
+border-radius:8px;
+box-shadow:0 2px 8px rgba(0,0,0,0.08);
+opacity:0;
+transform:translateY(40px);
+transition:all 0.8s ease;
+}
+
+section.show{
+opacity:1;
+transform:translateY(0);
+}
+
+h2{
+color:#14532d;
+border-bottom:2px solid #eee;
+padding-bottom:6px;
+}
+
+/* LIST */
+
+ul{
+padding-left:20px;
+}
+
+/* FEEDBACK */
+
+.feedback-form{
+display:flex;
+flex-direction:column;
+gap:12px;
+margin-top:15px;
+}
+
+.feedback-form input,
+.feedback-form textarea{
+padding:10px;
+font-size:16px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+.feedback-form button{
+background:#14532d;
+color:white;
+border:none;
+padding:12px;
+font-size:16px;
+border-radius:5px;
+cursor:pointer;
+}
+
+.feedback-form button:hover{
+background:#0f5132;
+}
+
+#msg{
+margin-top:10px;
+color:green;
+font-weight:bold;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:20px;
+background:#14532d;
+color:white;
+}
+
+@media(min-width:768px){
+nav li{
+flex:1;
+}
+}
+
+@keyframes fadeDown{
+from{
+opacity:0;
+transform:translateY(-30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+  
+<header>
+
+<div class="header-logo">
+<img src="logo.png" alt="GarudSpray Logo">
+</div>
+
+<div style="position:absolute; top:15px; right:20px;">
+<a href="index.html" style="color:white; text-decoration:none; font-weight:bold;">
+English Version
+</a>
+</div>
+
+<div style="text-align:center;">
+<h1>ड्रोन द्वारा कृषि छिड़काव सेवा</h1>
+
+
+<p>
+आधुनिक कृषि समाधान – कृषि ड्रोन तकनीक के साथ
+</p>
+<h3>( संपर्क: garudspray@gmail.com )</h3>
+</div>
+
+<a href="https://www.whatsapp.com/channel/0029VbChaBm90x2tklLDw11s"
+target="_blank"
+style="
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:14px 18px;
+border-radius:30px;
+font-weight:bold;
+text-decoration:none;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
+z-index:999;
+">
+📢 हमारे WhatsApp Channel से जुड़ें
+</a>
+
+
+</header>
+  
+
+<nav>
+
+<ul>
+
+<li><a href="#about">हमारे बारे में</a></li>
+
+<li><a href="#pesticide">कीटनाशक छिड़काव</a></li>
+
+<li><a href="#present">वर्तमान कार्य</a></li>
+
+<li><a href="#past">पिछला अनुभव</a></li>
+
+<li><a href="#drone">ड्रोन छिड़काव</a></li>
+
+<li><a href="#purchase">ड्रोन खरीद</a></li>
+
+<li><a href="#feedback">संपर्क करें</a></li>
+
+</ul>
+
+</nav>
+
+<div class="container">
+
+<section id="about">
+
+<h2>हमारे बारे में</h2>
+
+<p>
+
+हम एक आधुनिक कृषि सेवा शुरू कर रहे हैं जो फसलों पर छिड़काव और सटीक खेती के लिए ड्रोन तकनीक का उपयोग करेगी।  
+हमारा उद्देश्य किसानों को आधुनिक तकनीक अपनाने में सहायता करना है ताकि फसल उत्पादन बढ़े, श्रम लागत कम हो और कीटनाशकों का सही और समान उपयोग हो सके।
+
+</p>
+
+<p>
+
+यह परियोजना प्रारंभ में <b>पश्चिमी राजस्थान</b> में शुरू की जाएगी, विशेष रूप से <b>जोधपुर और नागौर</b> जिलों में।  
+इसके बाद इसे धीरे-धीरे <b>बाड़मेर और फलोदी सहित पूरे पश्चिमी राजस्थान</b> में विस्तारित किया जाएगा।
+
+</p>
+
+<p>
+
+प्रारंभिक चरण में <b>बीटी कपास और जीरा</b> जैसी फसलों पर ध्यान दिया जाएगा, जिनमें बार-बार छिड़काव और सावधानीपूर्वक रसायन प्रबंधन की आवश्यकता होती है।
+
+</p>
+
+<p>
+
+ड्रोन छिड़काव तकनीक से रसायनों का समान वितरण होता है, किसानों का हानिकारक रसायनों से संपर्क कम होता है और समय तथा पानी की बचत होती है।
+
+</p>
+
+</section>
+
+<section id="pesticide">
+
+<h2>कीटनाशक छिड़काव</h2>
+
+<p>
+
+कीटनाशक छिड़काव कृषि की एक महत्वपूर्ण गतिविधि है जिसका उपयोग फसलों को कीटों, रोगों और खरपतवारों से बचाने के लिए किया जाता है।
+
+</p>
+
+<ul>
+
+<li>कीट और कीड़ों का नियंत्रण</li>
+
+<li>फफूंद जनित रोगों से फसल की सुरक्षा</li>
+
+<li>फसल उत्पादन में वृद्धि</li>
+
+<li>फसल नुकसान में कमी</li>
+
+<li>रसायनों का समान वितरण</li>
+
+</ul>
+
+<p>
+
+ड्रोन आधारित छिड़काव से बड़े खेतों को कम समय में और अधिक सटीकता के साथ कवर किया जा सकता है।
+
+</p>
+
+</section>
+
+<section id="present">
+
+<h2>वर्तमान कार्य</h2>
+
+<p>
+
+हम वर्तमान में ड्रोन छिड़काव सेवा के लिए संचालन व्यवस्था तैयार कर रहे हैं।
+
+</p>
+
+<ul>
+
+<li>जोधपुर और नागौर जिलों में लक्ष्य गांवों की पहचान</li>
+
+<li>बीटी कपास और जीरा जैसी फसलों का अध्ययन</li>
+
+<li>पायलट छिड़काव संचालन की योजना</li>
+
+<li>किसानों और कृषि विशेषज्ञों के साथ साझेदारी</li>
+
+<li>रेगिस्तानी परिस्थितियों के लिए उपयुक्त ड्रोन मॉडल का चयन</li>
+
+</ul>
+
+</section>
+
+<section id="past">
+
+<h2>पिछला अनुभव</h2>
+
+<p>
+
+हमारी टीम को तकनीकी विकास और डिजिटल प्लेटफॉर्म बनाने का अनुभव है।  
+यह परियोजना हमारी तकनीकी विशेषज्ञता को कृषि क्षेत्र में लागू करने का प्रयास है।
+
+</p>
+
+<ul>
+
+<li>तकनीकी और डिजिटल अवसंरचना परियोजनाएँ</li>
+
+<li>पब्लिक डिजिटल सिस्टम विकास</li>
+
+<li>बड़े पैमाने के ICT प्लेटफॉर्म</li>
+
+<li>तकनीक आधारित सेवाओं में नवाचार</li>
+
+</ul>
+
+</section>
+
+<section id="drone">
+
+<h2>ड्रोन छिड़काव</h2>
+
+<p>
+
+कृषि ड्रोन ऐसे मानव रहित हवाई वाहन हैं जिन्हें सटीक खेती के लिए बनाया गया है।
+
+</p>
+
+<ul>
+
+<li>प्रति घंटे 10–20 एकड़ तक छिड़काव</li>
+
+<li>रसायनों का समान वितरण</li>
+
+<li>रसायनों की बर्बादी में कमी</li>
+
+<li>कम पानी का उपयोग</li>
+
+<li>किसानों का रसायनों से कम संपर्क</li>
+
+<li>कपास, जीरा, गेहूं और सरसों के लिए उपयुक्त</li>
+
+</ul>
+
+</section>
+
+<section id="purchase">
+
+<h2>ड्रोन खरीद</h2>
+
+<p>
+
+हम पेशेवर कृषि ड्रोन का मूल्यांकन कर रहे हैं जिनका उपयोग फसल छिड़काव के लिए किया जाता है।
+
+</p>
+
+<ul>
+
+<li>उच्च क्षमता के कीटनाशक टैंक</li>
+
+<li>सटीक GPS नेविगेशन</li>
+
+<li>स्वचालित उड़ान योजना</li>
+
+<li>बाधा पहचान प्रणाली</li>
+
+<li>समान छिड़काव नोजल</li>
+
+</ul>
+
+</section>
+
+<section id="feedback">
+
+<h2>अपनी जानकारी साझा करें, हमारी टीम जल्द ही आपसे संपर्क करेगी:</h2>
+
+<div id="loader" style="display:none;">
+⏳ जानकारी भेजी जा रही है...
+</div>
+
+<form id="feedbackForm" class="feedback-form">
+
+<input type="text" id="name" placeholder="आपका नाम" required>
+
+<input type="email" id="email" placeholder="आपका ईमेल">
+
+<input type="mobile" id="mobile" placeholder="मोबाइल नंबर" required>
+
+<textarea id="feedbackText" placeholder="आपका संदेश"></textarea>
+
+<button type="submit">भेजें</button>
+
+</form>
+
+<p id="msg"></p>
+
+</section>
+
+</div>
+
+<footer>
+
+<p>© 2026 ड्रोन कृषि सेवा</p>
+
+<p>
+<img src="https://api.visitorbadge.io/api/visitors?path=chavikram.github.io&label=Visitors&countColor=%23263759">
+</p>
+
+</footer>
+
+<script>
+
+/* same JS unchanged */
+
+const sections = document.querySelectorAll("section");
+
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+
+sections.forEach(section=>{
+observer.observe(section);
+});
+
+document.getElementById("feedbackForm").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+document.getElementById("loader").style.display="block";
+document.getElementById("msg").innerHTML="";
+
+fetch("https://script.google.com/macros/s/AKfycbyfvgoqgrE4FITnKsW7CmhrTOfOLiyZY1tN_IsxJ6Vx2hUQiOm734YEZthV033dpadV4g/exec", {
+
+method:"POST",
+
+body:JSON.stringify({
+
+name:document.getElementById("name").value,
+email:document.getElementById("email").value,
+mobile:document.getElementById("mobile").value,
+feedback:document.getElementById("feedbackText").value
+
+})
+
+})
+
+.then(res=>res.text())
+
+.then(data=>{
+
+document.getElementById("loader").style.display="none";
+
+document.getElementById("msg").innerHTML="जानकारी सफलतापूर्वक भेज दी गई।";
+
+document.getElementById("feedbackForm").reset();
+
+setTimeout(()=>{
+
+document.getElementById("msg").innerHTML="";
+
+},5000);
+
+})
+
+.catch(error=>{
+
+document.getElementById("loader").style.display="none";
+
+document.getElementById("msg").innerHTML="भेजने में त्रुटि हुई।";
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
